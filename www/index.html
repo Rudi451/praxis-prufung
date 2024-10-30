@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Demo Aufgabe</title>
+		<link rel="stylesheet" href="./css/style.css" />
+	</head>
+	<style>
+		.content {
+			display: flex;
+			flex-wrap: wrap;
+		}
+		.card {
+			width: 150px;
+			margin: 10px;
+			/* padding: 10px; */
+			border: 1px solid black;
+			border-radius: 5px;
+		}
+		.card-image {
+			width: 150px;
+			height: 150px;
+		}
+		.card-title {
+			padding: 10px;
+		}
+		img {
+			width: 150px;
+			height: 150px;
+		}
+		.loader {
+			width: 48px;
+			height: 48px;
+			border: 5px solid rgb(0, 0, 0);
+			border-bottom-color: rgb(255, 255, 255);
+			border-radius: 50%;
+			/* display: inline-block; */
+			display: none;
+			box-sizing: border-box;
+			animation: rotation 1s linear infinite;
+			padding: 20px;
+		}
+
+		@keyframes rotation {
+			0% {
+				transform: rotate(0deg);
+			}
+			100% {
+				transform: rotate(360deg);
+			}
+		}
+	</style>
+	<body>
+		<div class="container">
+			<div class="input-container">
+				<label for="images"><b> Bilder </b></label>
+
+				<select name="images" id="images">
+					<option value="berge.csv">berge.csv</option>
+					<option value="tiere.csv">tiere.csv</option>
+					<option value="straende.csv">straende.csv</option>
+				</select>
+				<button id="btn">Lade Daten</button>
+				<br />
+				<div class="toogle">
+					<label class="switch">
+						<input type="checkbox" id="checkbox" />
+						<span class="slider round"></span>
+					</label>
+					nur eigene Bilder Anzeigen
+				</div>
+			</div>
+			<div class="content" id="content"></div>
+			<span class="loader" id="loader"></span>
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/axios@1.7.7/dist/axios.min.js"></script>
+		<script src="./js/script.js"></script>
+	</body>
+</html>
